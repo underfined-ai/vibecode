@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "微信公众号 SVG效果 注入器",
+  "version": "3.4",
+  "description": "在微信公众号后台编辑器中添加图片轮播组件并支持自定义 SVG 源码注入。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://mp.weixin.qq.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mp.weixin.qq.com/cgi-bin/appmsg?t=media/appmsg_edit*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js",
+        "icons/icon48.png"
+      ],
+      "matches": [
+        "https://mp.weixin.qq.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "48": "icons/icon48.png"
+    },
+    "default_title": "微信公众号 SVG 注入器"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

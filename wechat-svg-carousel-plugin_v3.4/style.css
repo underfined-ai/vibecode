@@ -1,0 +1,5 @@
+/* 微信公众号 SVG 轮播插件样式 */
+#svg-carousel-btn .edui-icon:hover {
+    background-color: #f0f0f0 !important;
+    border-radius: 2px;
+}
